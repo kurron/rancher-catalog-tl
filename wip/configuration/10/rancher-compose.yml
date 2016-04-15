@@ -1,7 +1,8 @@
 .catalog:
   name: "Configuration Server"
-  description: "Dispenses configuration data for applications."
+  description: "Dispenses configuration data for Spring Cloud applications."
   version: "10.0.0"
+  uuid: 99999999-fe5f-40a2-a6a4-d6704dd5e1d3
   questions:
     - variable: "GIT_URI"
       label: "GitHub Repository"
