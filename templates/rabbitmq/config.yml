@@ -1,8 +1,0 @@
-name: RabbitMQ 
-description: |
-    Messaging that just works.
-version: 3.6.1 
-category: Development
-maintainer: rkurr@jvmguy.com
-license: Apache 2.0
-projectURL: https://www.rabbitmq.com/
