@@ -1,7 +1,7 @@
 .catalog:
   name: "Reporting"
   description: "Customer facing portion of the simulation."
-  version: "0.0.0"
+  version: "0.0.0.RELEASE"
   questions:
     - variable: "CONSUMER_REALM"
       label: "Logging Realm"
