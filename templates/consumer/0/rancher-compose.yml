@@ -1,0 +1,46 @@
+.catalog:
+  name: "Reporting"
+  description: "Customer facing portion of the simulation."
+  version: "0.0.0"
+  questions:
+    - variable: "CONSUMER_REALM"
+      label: "Logging Realm"
+      description: "What group to associate log messages to."
+      type: "string"
+      default: "rancher"
+      required: true
+    - variable: "SPRING_CLOUD_CONFIG_URI"
+      label: "Configuration Service"
+      description: "Location of the configuration service"
+      type: "string"
+      default: "http://configuration:2020/"
+      required: true
+    - variable: "SPRING_RABBITMQ_HOST"
+      label: "RabbitMQ Broker"
+      description: "Location of RabbitMQ"
+      type: "string"
+      default: "rabbitmq"
+      required: true
+    - variable: "SPRING_DATA_MONGODB_HOST"
+      label: "MongoDB"
+      description: "Location of MongoDB"
+      type: "string"
+      default: "mongodb"
+      required: true
+
+mongodb:
+    external_ips:
+    - 10.0.0.100
+
+rabbitmq:
+    external_ips:
+    - 10.0.0.100
+
+producer:
+    health_check:
+        port: 8080
+        interval: 30000
+        unhealthy_threshold: 3
+        request_line: GET /operations/health HTTP/1.0
+        healthy_threshold: 2
+        response_timeout: 5000
