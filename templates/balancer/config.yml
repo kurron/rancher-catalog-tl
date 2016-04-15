@@ -1,7 +1,7 @@
 name: TLO Load Balancer
 description: |
     The customer facing portion of the Rancher simulation.
-version: 1.0.0
+version: 1.0.0.RELEASE
 category: Development
 maintainer: rkurr@jvmguy.com
 license: Apache 2.0
