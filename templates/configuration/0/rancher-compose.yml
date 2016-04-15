@@ -1,7 +1,7 @@
 .catalog:
   name: "Configuration Server"
   description: "Dispenses configuration data for applications."
-  version: "10.0.0"
+  version: "1.0.0"
   questions:
     - variable: "GIT_URI"
       label: "GitHub Repository"
