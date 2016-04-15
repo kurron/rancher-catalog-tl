@@ -1,0 +1,33 @@
+configuration-one:
+    image: kurron/docker-spring-cloud-configuration-server:1.0.4
+    ports:
+        - 2020
+    log_driver: gelf
+    log_opt:
+        gelf-address: ${GELF_URI}
+        tag: "Configuration One"
+    environment:
+        SPRING_CLOUD_CONFIG_SERVER_GIT_URI: ${GIT_URI}
+        SPRING_CLOUD_CONSUL_DISCOVERY_ENABLED: false
+        SPRING_CLOUD_CONSUL_DISCOVERY_REGISTER: false
+
+configuration-two:
+    image: kurron/docker-spring-cloud-configuration-server:1.0.4
+    ports:
+        - 2020
+    log_driver: gelf
+    log_opt:
+        gelf-address: ${GELF_URI}
+        tag: "Configuration Two"
+    environment:
+        SPRING_CLOUD_CONFIG_SERVER_GIT_URI: ${GIT_URI}
+        SPRING_CLOUD_CONSUL_DISCOVERY_ENABLED: false
+        SPRING_CLOUD_CONSUL_DISCOVERY_REGISTER: false
+
+balancer:
+    image: rancher/load-balancer-service
+    ports:
+    - 2020:2020
+    links: 
+    - configuration-one:configuration-one
+    - configuration-two:configuration-two

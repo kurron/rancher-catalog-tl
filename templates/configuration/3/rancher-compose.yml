@@ -1,0 +1,21 @@
+.catalog:
+  name: "Spring Cloud Configuration Server"
+  description: "Dispenses configuration data for Spring Cloud applications."
+  version: "0.0.4"
+  uuid: 8b353284-fe5f-40a2-a6a4-d6704dd5e1d3
+  questions:
+    - variable: "GIT_URI"
+      label: "GitHub Repository"
+      description: "GitHub repository that contains the configuration files."
+      type: "string"
+      default: "https://github.com/kurron/spring-configuration-files.git"
+      required: true
+
+configuration:
+    health_check:
+        port: 2020
+        interval: 5000
+        unhealthy_threshold: 3
+        request_line: GET /operations/health HTTP/1.0
+        healthy_threshold: 2
+        response_timeout: 2000

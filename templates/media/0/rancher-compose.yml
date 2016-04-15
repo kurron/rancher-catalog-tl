@@ -1,0 +1,6 @@
+.catalog:
+  name: "Media Server"
+  description: "Plex Media Server and BitTorrent Sync"
+  version: "3.6.1"
+  uuid: 7b353284-fe5f-40a2-a6a4-d6704dd5e1d3
+

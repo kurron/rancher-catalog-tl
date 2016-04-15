@@ -1,0 +1,8 @@
+name: Graylog
+description: |
+    Open source log management that actually works.
+version: 1.3.4
+category: Development
+maintainer: rkurr@jvmguy.com
+license: Apache 2.0
+projectURL: https://www.graylog.org/

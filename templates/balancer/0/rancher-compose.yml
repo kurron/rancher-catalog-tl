@@ -1,0 +1,5 @@
+.catalog:
+  name: "TLO Load Balancer"
+  description: "Customer facing portion of the simulation."
+  version: "1.0.0"
+  uuid: 6b353284-fe5f-40a2-a6a4-d6704dd5e1d3

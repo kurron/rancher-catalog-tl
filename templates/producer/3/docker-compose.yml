@@ -1,0 +1,22 @@
+balancer:
+  image: rancher/load-balancer-service
+  ports:
+  # Listen on public port 80 and direct traffic to private port 2020 of the service
+  - 80:2020
+  external_links:
+  # Target services in a different stack will be listed as an external link
+  - configuration/configuration:configuration
+
+tlo:
+    image: kurron/docker-rancher-simulation-producer:1.0.0
+    ports:
+        - 8080
+    environment:
+        PRODUCER_REALM: ${PRODUCER_REALM}
+        PRODUCER_FAIL: ${PRODUCER_FAIL}
+        SPRING_CLOUD_CONFIG_URI: ${SPRING_CLOUD_CONFIG_URI}
+        SPRING_CLOUD_RABBITMQ_HOST: ${SPRING_CLOUD_RABBITMQ_HOST}
+        SPRING_CLOUD_DATASOURCE_URL: ${SPRING_CLOUD_DATASOURCE_URL}
+        SPRING_CLOUD_DATASOURCE_USERNAME: ${SPRING_CLOUD_DATASOURCE_USERNAME}
+        SPRING_CLOUD_DATASOURCE_PASSWORD: ${SPRING_CLOUD_DATASOURCE_PASSWORD}
+

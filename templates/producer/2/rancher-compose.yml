@@ -1,0 +1,57 @@
+.catalog:
+  name: "TLO"
+  description: "Customer facing portion of the simulation."
+  version: "2.0.0"
+  uuid: 7b353284-fe5f-40a2-a6a4-d6704dd5e1d3
+  questions:
+    - variable: "PRODUCER_REALM"
+      label: "Logging Realm"
+      description: "What group to associate log messages to."
+      type: "string"
+      default: "rancher"
+      required: true
+    - variable: "PRODUCER_FAIL"
+      label: "Service Failures"
+      description: "Should we simulate service failures?"
+      type: "boolean"
+      default: "false"
+      required: true
+    - variable: "SPRING_CLOUD_CONFIG_URI"
+      label: "Configuration Service"
+      description: "Location of the configuration service"
+      type: "string"
+      default: "http://configuration.configuration:2020"
+      required: true
+    - variable: "SPRING_CLOUD_RABBITMQ_HOST"
+      label: "RabbitMQ Broker"
+      description: "Location of RabbitMQ"
+      type: "string"
+      default: "rabbitmq.rabbitmq"
+      required: true
+    - variable: "SPRING_CLOUD_DATASOURCE_URL"
+      label: "MySQL Connection URL"
+      description: "How to connect to MySQL"
+      type: "string"
+      default: "jdbc:mysql://mysql.mysql/tlo"
+      required: true
+    - variable: "SPRING_CLOUD_DATASOURCE_USERNAME"
+      label: "MySQL Username"
+      description: "Username to use when connecting to MySQL"
+      type: "string"
+      default: "mysql"
+      required: true
+    - variable: "SPRING_CLOUD_DATASOURCE_USERNAME"
+      label: "MySQL Password"
+      description: "Password to use when connecting to MySQL"
+      type: "string"
+      default: "mysql"
+      required: true
+
+producer:
+    health_check:
+        port: 8080
+        interval: 5000
+        unhealthy_threshold: 3
+        request_line: GET /operations/health HTTP/1.0
+        healthy_threshold: 2
+        response_timeout: 2000

@@ -1,0 +1,14 @@
+nfs-media:
+    image: kurron/docker-nfs-media
+    net: "host"
+    privileged: true
+    labels:
+        io.rancher.scheduler.global: 'true'
+
+nfs-btsync:
+    image: kurron/docker-nfs-btsync
+    net: "host"
+    privileged: true
+    labels:
+        io.rancher.scheduler.global: 'true'
+

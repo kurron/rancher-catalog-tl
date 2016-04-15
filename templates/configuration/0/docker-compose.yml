@@ -1,0 +1,14 @@
+configuration:
+    image: kurron/docker-spring-cloud-configuration-server:1.0.4
+
+    ports:
+        - 2020
+
+    environment:
+        SPRING_CLOUD_CONFIG_SERVER_GIT_URI: ${GIT_URI}
+        SPRING_CLOUD_CONSUL_DISCOVERY_ENABLED: false
+        SPRING_CLOUD_CONSUL_DISCOVERY_REGISTER: false
+
+    labels:
+        io.rancher.scheduler.global: 'true'
+

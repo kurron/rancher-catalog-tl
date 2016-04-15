@@ -1,0 +1,28 @@
+tlo:
+    image: kurron/docker-rancher-simulation-producer:1.0.0
+    ports:
+        - 8080
+    external_links:
+        - configuration/configuration:configuration
+    environment:
+        PRODUCER_REALM: ${PRODUCER_REALM}
+        PRODUCER_FAIL: ${PRODUCER_FAIL}
+        SPRING_PROFILES_ACTIVE: default 
+        SPRING_CLOUD_CONFIG_URI: ${SPRING_CLOUD_CONFIG_URI}
+        SPRING_RABBITMQ_HOST: ${SPRING_RABBITMQ_HOST}
+        SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+        SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+        SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+
+balancer:
+    image: rancher/load-balancer-service
+    ports:
+        - 8080:8080
+    links:
+        - tlo:tlo
+
+mysql:
+  image: rancher/external-service
+
+rabbitmq:
+  image: rancher/external-service

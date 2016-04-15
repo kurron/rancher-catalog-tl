@@ -1,0 +1,8 @@
+name: Media Server 
+description: |
+    Media server that uses NFS mounts to read and store data.
+version: 1.0.0
+category: Media
+maintainer: rkurr@jvmguy.com
+license: Apache 2.0
+projectURL: https://plex.tv/ 

@@ -1,0 +1,8 @@
+name: TLO 
+description: |
+    The customer facing portion of the Rancher simulation.
+version: 1.0.1
+category: Development
+maintainer: rkurr@jvmguy.com
+license: Apache 2.0
+projectURL: https://github.com/kurron/rancher-simulation-producer

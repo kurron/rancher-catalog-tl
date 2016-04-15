@@ -1,0 +1,17 @@
+reporting:
+    image: kurron/docker-rancher-simulation-consumer:1.0.0
+    ports:
+        - 8080
+    external_links:
+        - configuration/configuration:configuration
+    environment:
+        CONSUMER_REALM: ${CONSUMER_REALM}
+        SPRING_CLOUD_CONFIG_URI: ${SPRING_CLOUD_CONFIG_URI}
+        SPRING_RABBITMQ_HOST: ${SPRING_RABBITMQ_HOST}
+        SPRING_DATA_MONGODB_HOST: ${SPRING_DATA_MONGODB_HOST}
+
+mongodb:
+  image: rancher/external-service
+
+rabbitmq:
+  image: rancher/external-service

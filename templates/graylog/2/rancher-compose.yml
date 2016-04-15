@@ -1,0 +1,51 @@
+.catalog:
+  name: "Graylog"
+  description: "Open source log management that actually works."
+  version: "1.3.6"
+  uuid: 5b353284-fe5f-40a2-a6a4-d6704dd5e1d3
+  questions:
+    - variable: "GRAYLOG_USERNAME"
+      label: "Admin Username"
+      description: "Username for the administrative account."
+      type: "string"
+      default: "admin"
+      required: true
+    - variable: "GRAYLOG_PASSWORD"
+      label: "Admin Password"
+      description: "Passowrd for the administrative account."
+      type: "string"
+      default: "admin"
+      required: true
+    - variable: "GRAYLOG_TIMEZONE"
+      label: "Timezone"
+      description: "Timezone you are in."
+      type: "string"
+      default: "America/New_York"
+      required: true
+    - variable: "GRAYLOG_RETENTION"
+      label: "Log Retention"
+      description: "Configure how long or how many logs should be stored"
+      type: "string"
+      default: "--size=3"
+      required: true
+    - variable: "GRAYLOG_SERVER_SECRET"
+      label: "Server Secret"
+      description: "Set salt for encryption"
+      type: "string"
+      default: "pepper"
+      required: true
+    - variable: "ES_MEMORY"
+      label: "Elasticsearch Memory"
+      description: "How much RAM to give Elasticsearch"
+      type: "string"
+      default: "512m"
+      required: true
+
+graylog:
+    health_check:
+        port: 5555
+        interval: 2000
+        unhealthy_threshold: 3
+        request_line: ''
+        healthy_threshold: 2
+        response_timeout: 2000
