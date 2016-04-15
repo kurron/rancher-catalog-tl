@@ -1,7 +1,7 @@
 .catalog:
   name: "TLO"
   description: "Customer facing portion of the simulation."
-  version: "0.0.0.RELEASE"
+  version: "1.2.3.MILESTONE"
   questions:
     - variable: "PRODUCER_REALM"
       label: "Logging Realm"
@@ -13,7 +13,7 @@
       label: "Service Failures"
       description: "Should we simulate service failures?"
       type: "boolean"
-      default: "false"
+      default: "true"
       required: true
     - variable: "SPRING_CLOUD_CONFIG_URI"
       label: "Configuration Service"
