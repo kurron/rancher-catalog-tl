@@ -1,0 +1,8 @@
+name: Configuration Server
+description: |
+    Configuration server for Spring Cloud based applications.
+version: 1.0.0.RELEASE
+category: Development
+maintainer: rkurr@jvmguy.com
+license: Apache 2.0
+projectURL: https://github.com/kurron/spring-configuration-server
